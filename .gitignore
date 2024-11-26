@@ -6,8 +6,8 @@ build/
 !**/src/test/**/build/
 !.github/workflows/autodeploy.yaml   # 이 파일만 예외로 설정
 
-*.yaml   # 모든 yaml 파일을 무시
-*.properties
+**/src/main/resources/application.yml
+**/src/main/resources/application.properties
 
 ### STS ###
 .apt_generated
