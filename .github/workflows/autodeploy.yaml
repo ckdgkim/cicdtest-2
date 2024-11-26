@@ -43,7 +43,7 @@ jobs:
           source: app.jar
           target: /home/ubuntu/project-server/tobe
 
-      - name: EC2 에 접속하기(SSH 사용)
+      - name: SSH로 EC2에 접속하기
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -57,4 +57,6 @@ jobs:
             cd /home/ubuntu/project-server/cur
             sudo fuser -k -n tcp 8080 || true
             sudo nohup java -jar app.jar > ./output.log 2>&1 &
-            rm -rf /home/ubuntu
+            rm -rf /home/ubuntu/project-server/tobe
+      
+            
